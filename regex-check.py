@@ -14,13 +14,11 @@ string = getenv('INPUT_STRING')
 string = str(string)
 match = findall(regex, string)
 
-print(dir(match), flush=True)
 if match:
+  print(f"The regex found a match in the provided string: {string}", flush=True)
   for x in match:
     print(x, flush=True)
-
-if match:
-  print("The regex found a match", flush=True)
   exit()
+
 else:
   exit("No match was found for the provided regex")
