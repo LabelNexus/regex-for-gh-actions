@@ -9,6 +9,11 @@ inputs:
   string:
     description: 'The string to search for the pattern'
     required: true
+
+outputs:
+  matches:
+    description: 'A list of the matches found by the regex in the given string'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
