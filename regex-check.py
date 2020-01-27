@@ -9,7 +9,7 @@ except:
   exit('You must provide a regex as the first arg')
 
 try:
-  string = argv[2]
+  string = getenv('GITHUB_WORKSPACE', 'String')
 except:
   exit('You must provide a string to search as the second arg')
 
