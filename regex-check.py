@@ -1,5 +1,5 @@
 from os import getenv, environ, listdir
-from re import search
+from re import findall
 from sys import exit
 import json
 
@@ -20,15 +20,15 @@ print(event_data.get('pull_request', {}).get('title'), flush=True)
 try:
   regex = getenv('INPUT_PATTERN')
 except:
-  exit('You must provide a regex as the first arg')
+  exit('You must provide a pattern using the "with:" key in the workflow config')
 
 try:
   string = getenv('INPUT_STRING')
 except:
-  exit('You must provide a string to search as the second arg')
+  exit('You must provide a string using the "with:" key in the workflow config')
 
 string = str(string)
-match = search(regex, string)
+match = findall(regex, string)
 print(dir(match), flush=True)
 
 if match:
