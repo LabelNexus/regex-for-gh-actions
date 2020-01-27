@@ -27,6 +27,7 @@ except:
 
 string = str(string)
 match = search(regex, string)
+print(match, flush=True)
 
 if match:
   print("The regex found a match", flush=True)
