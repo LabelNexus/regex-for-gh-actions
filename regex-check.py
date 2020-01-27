@@ -1,10 +1,18 @@
-from sys import exit
+from os import getenv, environ, listdir
 from re import search
-from os import getenv, environ
+from sys import exit
 
 print(os.environ, flush=True)
+
+workspace = getenv('GITHUB_WORKSPACE')
+event_path = getenv('GITHUB_EVENT_PATH')
+
+print([f for f in listdir('github/home')])
+print([f for f in listdir('github/workspace')])
+print([f for f in listdir('github/workflow')])
+
 try:
-  regex = getenv('GITHUB_WORKSPACE')
+  regex = workspace
 except:
   exit('You must provide a regex as the first arg')
 
