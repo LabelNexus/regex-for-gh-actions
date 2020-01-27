@@ -2,7 +2,7 @@ from os import getenv, environ, listdir
 from re import search
 from sys import exit
 
-print(os.environ, flush=True)
+print(environ, flush=True)
 
 workspace = getenv('GITHUB_WORKSPACE')
 event_path = getenv('GITHUB_EVENT_PATH')
