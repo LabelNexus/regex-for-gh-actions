@@ -7,9 +7,13 @@ print(environ, flush=True)
 workspace = getenv('GITHUB_WORKSPACE')
 event_path = getenv('GITHUB_EVENT_PATH')
 
-print([f for f in listdir('/github/home')], flush=True)
-print([f for f in listdir('/github/workspace')], flush=True)
 print([f for f in listdir('/github/workflow')], flush=True)
+
+with open('/github/workflow/event.json') as f:
+  event_data = json.load(f)
+  print(event_data.keys(), flush=True)
+
+print(event_data, flush=True)
 
 try:
   regex = workspace
