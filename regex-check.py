@@ -16,9 +16,8 @@ match = findall(regex, string)
 
 if match:
   print(f"The regex found a match in the provided string: {string}", flush=True)
-  for x in match:
-    print(x, flush=True)
+  print(f"Matches: {[x for x in match]}", flush=True)
   exit()
 
 else:
-  exit("No match was found for the provided regex")
+  exit(f"No match was found for the provided pattern - {regex} - and string - {string}")
