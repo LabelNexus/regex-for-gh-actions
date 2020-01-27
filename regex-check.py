@@ -14,7 +14,8 @@ with open('/github/workflow/event.json') as f:
   event_data = json.load(f)
   print(event_data.keys(), flush=True)
 
-print(event_data, flush=True)
+print(event_data['pull_request'].keys(), flush=True)
+print(event_data.get('pull_request'), flush=True)
 
 try:
   regex = workspace
