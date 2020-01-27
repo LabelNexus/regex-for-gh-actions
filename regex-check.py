@@ -12,7 +12,7 @@ match = findall(regex, string)
 if match:
   print(f"The regex found a match in the provided string: {string}", flush=True)
   print(f"Matche(s): {match}", flush=True)
-  os.environ['OUTPUT_MATCHES'] = match
+  environ['OUTPUT_MATCHES'] = match
   exit()
 
 exit(f"No match was found for the provided pattern - {regex} - and string - {string}")
