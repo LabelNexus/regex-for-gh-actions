@@ -7,9 +7,9 @@ print(environ, flush=True)
 workspace = getenv('GITHUB_WORKSPACE')
 event_path = getenv('GITHUB_EVENT_PATH')
 
-print([f for f in listdir('github/home')])
-print([f for f in listdir('github/workspace')])
-print([f for f in listdir('github/workflow')])
+print([f for f in listdir('/github/home')], flush=True)
+print([f for f in listdir('/github/workspace')], flush=True)
+print([f for f in listdir('/github/workflow')], flush=True)
 
 try:
   regex = workspace
