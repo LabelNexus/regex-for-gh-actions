@@ -1,0 +1,17 @@
+name: 'Regex For GH Actions'
+description: 'Pass in a regex and a string - find matches'
+author: 'Gunnar Norred'
+inputs:
+  pattern:
+    description: 'The regex pattern to search for - Defaults to Jira issue format'
+    default: '/([A-Z]{2,}\-\d+)/g'
+    required: false
+  string:
+    description: 'The string to search for the pattern'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'check-square'
+  color: 'blue'
