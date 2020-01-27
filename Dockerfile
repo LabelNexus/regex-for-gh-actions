@@ -5,4 +5,4 @@ WORKDIR /app
 
 COPY regex-check.py /app/regex-check.py
 
-CMD [ "python", "./regex-check.py" ]
+CMD [ "python", "/app/regex-check.py" ]
