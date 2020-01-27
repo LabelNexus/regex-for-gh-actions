@@ -3,11 +3,6 @@ from re import findall
 from sys import exit
 import json
 
-event_path = getenv('GITHUB_EVENT_PATH')
-
-with open(event_path) as f:
-  event_data = json.load(f)
-
 regex = getenv('INPUT_PATTERN')
 string = getenv('INPUT_STRING')
 
