@@ -15,21 +15,21 @@ with open('/github/workflow/event.json') as f:
   print(event_data.keys(), flush=True)
 
 print(event_data['pull_request'].keys(), flush=True)
-print(event_data.get('pull_request'), flush=True)
+print(event_data.get('pull_request', {}).get('title'), flush=True)
 
 try:
-  regex = workspace
+  regex = getenv('INPUT_PATTERN')
 except:
   exit('You must provide a regex as the first arg')
 
 try:
-  string = getenv('GITHUB_WORKSPACE', 'String')
+  string = getenv('INPUT_STRING')
 except:
   exit('You must provide a string to search as the second arg')
 
 string = str(string)
 match = search(regex, string)
-print(match, flush=True)
+print(dir(match), flush=True)
 
 if match:
   print("The regex found a match", flush=True)
